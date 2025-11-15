@@ -313,22 +313,35 @@ class Helpers
 
     public static function module_permission_check($mod_name)
     {
+        $user = auth('admin')->user();
 
-        // if (!auth('admin')->user()->role) {
-        //     return false;
-        // }
+        // If not logged in → deny
+        if (!$user) {
+            return false;
+        }
 
-        // $permission = auth('admin')->user()->role->modules;
-        // if (isset($permission) && in_array($mod_name, (array)json_decode($permission)) == true) {
-        //     return true;
-        // }
+        // SUPER ADMIN → role_id is NULL → full access
+        if ($user->role_id === null) {
+            return true;
+        }
 
-        // if (auth('admin')->user()->role_id == 1) {
-        //     return true;
-        // }
-        // return false;
-        return true;
+        // If role exists but no modules assigned → deny
+        if (!$user->role || empty($user->role->modules)) {
+            return false;
+        }
+
+        // Decode modules JSON from admin_roles table
+        $modules = json_decode($user->role->modules, true);
+
+        // If the module is allowed → permit
+        if (is_array($modules) && in_array($mod_name, $modules)) {
+            return true;
+        }
+
+        // Otherwise → deny
+        return false;
     }
+
 }
 //for translation
 function translate($key)
