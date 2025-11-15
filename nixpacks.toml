@@ -9,14 +9,15 @@ pkgs = [
   "php82Extensions.fileinfo",
   "php82Extensions.openssl",
   "php82Extensions.zip",
-  "zip",                       
-  "unzip", 
+  "libzip",
+  "zip",
+  "unzip",
   "composer"
 ]
 
 [phases.build]
 cmds = [
-  "composer install --no-dev --optimize-autoloader",
+  "composer install --no-dev --optimize-autoloader --ignore-platform-req=ext-zip",
   "php artisan storage:link"
 ]
 
