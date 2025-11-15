@@ -2,14 +2,18 @@
     "name": "laravel/laravel",
     "type": "project",
     "description": "The Laravel Framework.",
-    "keywords": [
-        "framework",
-        "laravel"
-    ],
+    "keywords": ["framework", "laravel"],
     "license": "MIT",
+
     "require": {
         "php": "^8.2",
+
         "ext-curl": "*",
+        "ext-json": "*",
+        "ext-mysqli": "*",
+        "ext-pdo_mysql": "*",
+        "ext-zip": "*",
+
         "barryvdh/laravel-dompdf": "*",
         "brian2694/laravel-toastr": "^5.56",
         "doctrine/dbal": "^3.3",
@@ -18,10 +22,11 @@
         "laravel/passport": "^10.4",
         "laravel/sanctum": "^2.11",
         "laravel/tinker": "^2.5",
+        "madnest/madzipper": "^1.1",
         "milon/barcode": "^9.0",
-        "ext-json": "*",
-        "ext-mysqli": "*"
+        "rap2hpoutre/fast-excel": "^3.1"
     },
+
     "require-dev": {
         "barryvdh/laravel-debugbar": "^3.6",
         "spatie/laravel-ignition": "^1.0",
@@ -31,6 +36,7 @@
         "nunomaduro/collision": "^6.1",
         "phpunit/phpunit": "^9.5.10"
     },
+
     "autoload": {
         "files": [
             "app/CPU/Helpers.php",
@@ -43,11 +49,13 @@
             "Database\\Seeders\\": "database/seeders/"
         }
     },
+
     "autoload-dev": {
         "psr-4": {
             "Tests\\": "tests/"
         }
     },
+
     "scripts": {
         "post-autoload-dump": [
             "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
@@ -63,16 +71,19 @@
             "@php artisan key:generate --ansi"
         ]
     },
+
     "extra": {
         "laravel": {
             "dont-discover": []
         }
     },
+
     "config": {
         "optimize-autoloader": true,
         "preferred-install": "dist",
         "sort-packages": true
     },
+
     "minimum-stability": "dev",
     "prefer-stable": true
 }
