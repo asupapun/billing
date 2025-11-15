@@ -9,6 +9,8 @@ pkgs = [
   "php82Extensions.fileinfo",
   "php82Extensions.openssl",
   "php82Extensions.zip",
+  "zip",                       
+  "unzip", 
   "composer"
 ]
 
