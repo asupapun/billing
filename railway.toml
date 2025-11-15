@@ -3,15 +3,8 @@ builder = "railpack"
 
 [php]
 version = "8.2"
-extensions = [
-  "zip",
-  "curl",
-  "openssl",
-  "pdo",
-  "pdo_mysql",
-  "mbstring",
-  "fileinfo"
-]
+extensions = ["zip","curl","mbstring","openssl","pdo","pdo_mysql","fileinfo","xml"]
 
 [deploy]
 start = "php artisan serve --host=0.0.0.0 --port=${PORT}"
+
