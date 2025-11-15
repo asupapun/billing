@@ -1,0 +1,23 @@
+[phases.setup]
+phpVersion = "8.2"
+pkgs = [
+  "php82",
+  "php82Extensions.curl",
+  "php82Extensions.pdo",
+  "php82Extensions.pdo_mysql",
+  "php82Extensions.mbstring",
+  "php82Extensions.fileinfo",
+  "php82Extensions.openssl",
+  "composer",
+  "nodejs_20"
+]
+
+[phases.build]
+cmds = [
+  "composer install --no-dev --optimize-autoloader",
+  "npm install",
+  "npm run build"
+]
+
+[start]
+cmd = "php artisan serve --host=0.0.0.0 --port=${PORT}"
