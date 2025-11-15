@@ -885,4 +885,5 @@
   'The purchase code' => 'The purchase code',
   'Codecanyon Username' => 'Codecanyon Username',
   '6POS Software Update' => '6POS Software Update',
+  'Unit Type updated successfully' => 'Unit Type updated successfully',
 );
