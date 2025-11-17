@@ -10,7 +10,7 @@
         $favIcon = optional(\App\Models\BusinessSetting::where('key','fav_icon')->first())->value ?? 'default.png';
     @endphp
 
-    <link rel="shortcut icon" href="{{ asset('storage/app/public/shop/' . $favIcon) }}">
+    <link rel="shortcut icon" href="{{ asset('storage/shop/' . $favIcon) }}">
 
     <!-- FIXED ASSET PATHS -->
     <link rel="stylesheet" href="{{ asset('assets/admin/css/google-fonts.css') }}">

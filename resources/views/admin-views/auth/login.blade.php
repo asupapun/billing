@@ -21,7 +21,8 @@
 
     @php
         $shop_logo = \App\Models\BusinessSetting::where('key','shop_logo')->value('value') ?? 'default.png';
-        $shop_logo_path = asset('storage/app/public/shop/'.$shop_logo);
+        
+        $shop_logo_path = asset('storage/shop/'.$shop_logo);
     @endphp
 
     <div class="auth-wrapper">

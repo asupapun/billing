@@ -22,7 +22,7 @@ class Admin extends Authenticatable
         $image = $this->image ?? null;
         $path = asset('assets/admin/img/160x160/img1.jpg');
         if (!is_null($image) && Storage::disk('public')->exists('admin/' . $image)) {
-            $path = asset('storage/app/public/admin/' . $image);
+            $path = asset('storage/admin/' . $image);
         }
         return $path;
     }
