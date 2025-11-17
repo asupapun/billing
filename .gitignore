@@ -12,3 +12,7 @@ yarn-error.log
 /.idea
 /.vscode
 .DS_Store
+.env
+.env.example
+composer.json
+copmoser.lock

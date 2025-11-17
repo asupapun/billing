@@ -17,7 +17,7 @@ class Brand extends Model
         $image = $this->image ?? null;
         $path = asset('assets/admin/img/160x160/img1.jpg');
         if (!is_null($image) && Storage::disk('public')->exists('brand/' . $image)) {
-            $path = asset('storage/app/public/brand/' . $image);
+            $path = asset('storage/brand/' . $image);
         }
         return $path;
     }

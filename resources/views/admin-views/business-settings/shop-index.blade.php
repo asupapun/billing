@@ -512,7 +512,7 @@
                                         </div>
                                         <div class="text-center">
                                             <img class="img-one-bs my-4" id="viewer"
-                                                 src="{{onErrorImage($shopLogo,asset('storage/app/public/shop').'/' . $shopLogo,asset('assets/admin/img/160x160/img2.jpg') ,'shop/')}}" alt="" />
+                                                 src="{{onErrorImage($shopLogo,asset('storage/shop').'/' . $shopLogo,asset('assets/admin/img/160x160/img2.jpg') ,'shop/')}}" alt="" />
                                         </div>
                                     </div>
                                 </div>
@@ -527,7 +527,7 @@
                                         </div>
                                         <div class="text-center">
                                             <img class="img-one-bs my-4" id="viewer2"
-                                                 src="{{onErrorImage($favIcon, asset('storage/app/public/shop').'/' . $favIcon, asset('assets/admin/img/160x160/img2.jpg') ,'shop/')}}" alt="{{ \App\CPU\translate('fav_icon') }}" />
+                                                 src="{{onErrorImage($favIcon, asset('storage/shop').'/' . $favIcon, asset('assets/admin/img/160x160/img2.jpg') ,'shop/')}}" alt="{{ \App\CPU\translate('fav_icon') }}" />
                                         </div>
                                     </div>
                                 </div>

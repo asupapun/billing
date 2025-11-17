@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width">
     <title>{{\App\CPU\translate('Add to cart page')}}</title>
     @php($favIcon=\App\Models\BusinessSetting::where(['key'=>'fav_icon'])->first()->value)
-    <link rel="shortcut icon" href="{{asset('storage/app/public/shop').'/' . $favIcon }}">
+    <link rel="shortcut icon" href="{{asset('storage/shop').'/' . $favIcon }}">
 
     <link rel="stylesheet" href="{{asset('assets/admin')}}/css/google-fonts.css">
     <link rel="stylesheet" href="{{asset('assets/admin')}}/css/vendor.min.css">
@@ -47,7 +47,7 @@
                 @php($shop_logo=\App\Models\BusinessSetting::where('key','shop_logo')->first()->value)
                 <a class="navbar-brand pt-0 pb-0" href="{{route('admin.dashboard')}}" aria-label="Front">
                     <img class="navbar-brand-logo w-i1"
-                        src="{{onErrorImage($shop_logo,asset('storage/app/public/shop').'/' . $shop_logo,asset('assets/admin/img/160x160/img2.jpg') ,'shop/')}}"
+                        src="{{onErrorImage($shop_logo,asset('storage/shop/'.$shop_logo),asset('assets/admin/img/160x160/img2.jpg') ,'shop/')}}"
                         alt="{{\App\CPU\translate('Logo')}}">
                 </a>
             </div>

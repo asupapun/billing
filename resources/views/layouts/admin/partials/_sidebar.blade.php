@@ -7,7 +7,7 @@
                     @php($shop_logo=\App\Models\BusinessSetting::where(['key'=>'shop_logo'])->first()->value)
                     <a class="navbar-brand" href="{{route('admin.dashboard')}}" aria-label="{{\App\CPU\translate('Front')}}">
                         <img class="navbar-brand-logo"
-                             src="{{onErrorImage($shop_logo, asset('storage/app/public/shop').'/' . $shop_logo,asset('assets/admin/img/160x160/img2.jpg') ,'shop/')}}"
+                             src="{{onErrorImage($shop_logo, asset('storage/shop/'.$shop_logo),asset('assets/admin/img/160x160/img2.jpg') ,'shop/')}}"
                              alt="{{\App\CPU\translate('logo')}}">
                     </a>
                     <button type="button"

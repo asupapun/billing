@@ -78,7 +78,7 @@
                                 <div class="form-group my-4">
                                     <div class="text-center">
                                         <img class="img-one-cusu" id="viewer"
-                                             src="{{onErrorImage($employee['image'],asset('storage/app/public/admin').'/' . $employee['image'],asset('assets/admin/img/160x160/img1.jpg') ,'admin/')}}"
+                                             src="{{onErrorImage($employee['image'],asset('storage/admin').'/' . $employee['image'],asset('assets/admin/img/160x160/img1.jpg') ,'admin/')}}"
                                              alt="{{ \App\CPU\translate('Employee thumbnail')}}"/>
                                     </div>
                                 </div>
