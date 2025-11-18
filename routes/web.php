@@ -23,3 +23,10 @@ Route::get('authentication-failed', function () {
         'errors' => $errors
     ], 401);
 })->name('authentication-failed');
+
+// routes/web.php
+Route::get('/run-storage-link', function() {
+    Artisan::call('storage:link');
+    return 'Storage link created successfully!';
+});
+
