@@ -30,3 +30,14 @@ Route::get('/run-storage-link', function() {
     return 'Storage link created successfully!';
 });
 
+Route::get('/check-image', function () {
+    $path = storage_path('app/public/shop/2025-11-18-691c3fec20ca7.png');
+
+    return [
+        'symlink_exists' => file_exists(public_path('storage')),
+        'file_exists' => file_exists($path),
+        'path' => $path
+    ];
+});
+
+
