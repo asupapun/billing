@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Artisan;
+use Illuminate\Support\Facades\Request;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -39,5 +41,22 @@ Route::get('/check-image', function () {
         'path' => $path
     ];
 });
+
+Route::get('/run-artisan', function () {
+    $secret = Request::query('key');
+
+    if ($secret !== env('ARTISAN_SECRET')) {
+        abort(403, 'Unauthorized');
+    }
+
+    Artisan::call('optimize:clear');
+    Artisan::call('config:clear');
+    Artisan::call('cache:clear');
+    Artisan::call('route:clear');
+    Artisan::call('view:clear');
+
+    return 'All caches cleared successfully!';
+});
+
 
 
