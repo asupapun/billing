@@ -43,12 +43,7 @@ Route::get('/check-image', function () {
 });
 
 Route::get('/run-artisan', function () {
-    $secret = Request::query('key');
-
-    if ($secret !== env('ARTISAN_SECRET')) {
-        abort(403, 'Unauthorized');
-    }
-
+    
     Artisan::call('optimize:clear');
     Artisan::call('config:clear');
     Artisan::call('cache:clear');
