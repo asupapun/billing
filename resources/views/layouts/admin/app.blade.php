@@ -19,13 +19,20 @@
     <link rel="stylesheet" href="{{ asset('assets/admin/css/theme.minc619.css?v=1.0') }}">
     <link rel="stylesheet" href="{{ asset('assets/admin/css/bootstrap-select.min.css') }}"/>
 
+
+
+
     @stack('css_or_js')
 
     <link rel="stylesheet" href="{{ asset('assets/admin/css/custom.css') }}"/>
     <link rel="stylesheet" href="{{ asset('assets/admin/css/toastr.css') }}">
 </head>
 
+
+
 <body class="footer-offset">
+
+
 
 <div class="direction-toggle">
     <i class="tio-settings"></i>
