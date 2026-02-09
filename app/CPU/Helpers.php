@@ -314,23 +314,26 @@ class Helpers
     public static function module_permission_check($mod_name)
     {
 
-        // ✅ MASTER ADMIN = FULL ACCESS
+        // ✅ SUPER / MASTER ADMIN → FULL ACCESS
     if (auth('admin')->check() && auth('admin')->user()->role_id == 1) {
         return true;
     }
 
-    if (!auth('admin')->user()->role) {
+    $user = auth('admin')->user();
+
+    if (!$user || !$user->role) {
         return false;
     }
 
-    $permission = auth('admin')->user()->role->modules;
+    $permissions = $user->role->modules;
 
-    if ($permission) {
-        $modules = json_decode($permission, true);
-        return in_array($mod_name, $modules ?? []);
+    if (!$permissions) {
+        return false;
     }
 
-    return false;
+    $modules = json_decode($permissions, true);
+
+    return is_array($modules) && in_array($module, $modules);
         // if (!auth('admin')->user()->role) {
         //     return false;
         // }
