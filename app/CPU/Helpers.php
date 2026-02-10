@@ -314,7 +314,7 @@ class Helpers
     public static function module_permission_check($mod_name)
     {
 
-        $user = auth()->user();
+       $user = auth('admin')->user();
 
     if (!$user) {
         return false;
