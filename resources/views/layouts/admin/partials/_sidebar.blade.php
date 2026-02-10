@@ -1,4 +1,8 @@
-{{ dd(auth('admin')->user()->role_id) }}
+<?php
+echo '<pre>';
+print_r($this->session->userdata());
+exit;
+?>
 <div id="sidebarMain" class="d-none">
     <aside
         class="aside-back js-navbar-vertical-aside navbar navbar-vertical-aside navbar-vertical navbar-vertical-fixed navbar-expand-xl navbar-bordered  ">
