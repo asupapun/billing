@@ -314,22 +314,18 @@ class Helpers
     public static function module_permission_check($mod_name)
     {
 
-        // Check if Master Admin (role_id = 1) - they have access to everything
-        if (auth('admin')->user()->role_id == 1) {
-            return true;
-        }
-
-        // Check if user has a role assigned
         if (!auth('admin')->user()->role) {
             return false;
         }
 
-        // Check if the module is in the user's allowed modules
         $permission = auth('admin')->user()->role->modules;
-        if (isset($permission) && in_array($mod_name, (array)json_decode($permission))) {
+        if (isset($permission) && in_array($mod_name, (array)json_decode($permission)) == true) {
             return true;
         }
 
+        if (auth('admin')->user()->role_id == 1) {
+            return true;
+        }
         return false;
         
     }
