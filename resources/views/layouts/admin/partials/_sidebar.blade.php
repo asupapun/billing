@@ -2,7 +2,7 @@
 dump(session()->all());
 die;
 @endphp
-<div id="sidebarMain" class="d-none">
+<div id="sidebarMain">
     <aside
         class="aside-back js-navbar-vertical-aside navbar navbar-vertical-aside navbar-vertical navbar-vertical-fixed navbar-expand-xl navbar-bordered  ">
         <div class="navbar-vertical-container text-capitalize">
