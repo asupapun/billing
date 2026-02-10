@@ -7,6 +7,7 @@ use App\Models\Currency;
 
 class Helpers
 {
+    
     public static function error_processor($validator)
     {
         $err_keeper = [];
@@ -331,7 +332,7 @@ class Helpers
 
     $modules = json_decode($user->role->modules, true);
 
-    return is_array($modules) && in_array($module, $modules);
+    return is_array($modules) && in_array($mod_name, $modules);
         // if (!auth('admin')->user()->role) {
         //     return false;
         // }
