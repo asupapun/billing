@@ -7,7 +7,6 @@ use App\Models\Currency;
 
 class Helpers
 {
-    
     public static function error_processor($validator)
     {
         $err_keeper = [];
@@ -315,37 +314,19 @@ class Helpers
     public static function module_permission_check($mod_name)
     {
 
-       $user = auth('admin')->user();
+        if (!auth('admin')->user()->role) {
+            return false;
+        }
 
-    if (!$user) {
+        $permission = auth('admin')->user()->role->modules;
+        if (isset($permission) && in_array($mod_name, (array)json_decode($permission)) == true) {
+            return true;
+        }
+
+        if (auth('admin')->user()->role_id == 1) {
+            return true;
+        }
         return false;
-    }
-
-    // ✅ MASTER ADMIN
-    if ((int) $user->role_id === 1) {
-        return true;
-    }
-
-    if (!$user->role || !$user->role->modules) {
-        return false;
-    }
-
-    $modules = json_decode($user->role->modules, true);
-
-    return is_array($modules) && in_array($mod_name, $modules);
-        // if (!auth('admin')->user()->role) {
-        //     return false;
-        // }
-
-        // $permission = auth('admin')->user()->role->modules;
-        // if (isset($permission) && in_array($mod_name, (array)json_decode($permission)) == true) {
-        //     return true;
-        // }
-
-        // if (auth('admin')->user()->role_id == 1) {
-        //     return true;
-        // }
-        // return false;
         
     }
 }
