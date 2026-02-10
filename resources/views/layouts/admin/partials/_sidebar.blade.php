@@ -1,7 +1,4 @@
-@php
-dump(session()->all());
-die;
-@endphp
+{{-- SIDEBAR FILE HIT --}}
 <div id="sidebarMain">
     <aside
         class="aside-back js-navbar-vertical-aside navbar navbar-vertical-aside navbar-vertical navbar-vertical-fixed navbar-expand-xl navbar-bordered  ">

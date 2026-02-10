@@ -314,7 +314,6 @@ class Helpers
 
     public static function module_permission_check($mod_name)
     {
-        dd('HELPERS FILE LOADED');
 
        $user = auth('admin')->user();
 
